@@ -26,11 +26,10 @@ export default {
   #search-container{
     width: 600px;
     margin: 0 auto;
-  }
-
-  input{
-    padding: 10px;
-    width: 100%;
-    outline: none;
+    input{
+      padding: 10px;
+      width: 100%;
+      outline: none;
+    }
   }
 </style>

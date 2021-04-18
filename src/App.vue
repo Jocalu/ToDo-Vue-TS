@@ -95,20 +95,17 @@ export default {
     font-size: 1.5em;
     padding: 0;
     margin: 0;
-  }
-
-  #main-container {
-    border: solid 1px #ccc;
-    width: 600px;
-    margin: 100px auto;
-  }
-
-  #header {
-    background: black;
-    padding: 10px;
-  }
-
-  h2 {
-    padding: 0 10px;
+    #header {
+      background: black;
+      padding: 10px;
+      h2 {
+        padding: 0 10px;
+      }
+    }
+    #main-container {
+      border: solid 1px #ccc;
+      width: 600px;
+      margin: 100px auto;
+    }
   }
 </style>

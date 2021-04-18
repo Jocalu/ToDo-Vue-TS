@@ -41,11 +41,11 @@ export default {
 <style lang="scss">
   #add-container{
     padding: 10px;
-  }
-  input {
-    padding: 10px;
-    outline: none;
-    border: 1px solid #ccc;
-    width: 100%;
+    input {
+      padding: 10px;
+      outline: none;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
   }
 </style>
