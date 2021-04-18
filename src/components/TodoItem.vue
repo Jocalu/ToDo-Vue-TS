@@ -18,7 +18,7 @@ export default {
   name: 'TodoItem',
   props: ['todo'],
   methods: {
-    checkTodo() :void {
+    checkTodo(): void {
       this.todo.completed = !this.todo.completed;
     },
   },

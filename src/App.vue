@@ -18,15 +18,15 @@ import Search from './components/Search.vue';
 import Todos from './components/Todos.vue';
 import TodoAdd from './components/TodoAdd.vue';
 
-interface todos {
+interface Todo {
   id: number,
   title: string,
   completed: boolean
 }
 
-interface data {
-  todos: todos[],
-  copyTodos: todos[],
+interface Data {
+  todos: Todo[],
+  copyTodos: Todo[],
 }
 
 export default {
@@ -39,7 +39,7 @@ export default {
       this.todos = this.todos.filter((todo) => todo.id !== id);
       this.copyTodos = [...this.todos];
     },
-    addTodo(todo: todos): void {
+    addTodo(todo: Todo): void {
       this.todos.push(todo);
       this.copyTodos = [...this.todos];
     },
@@ -52,7 +52,7 @@ export default {
       }
     },
   },
-  data(): data {
+  data(): Data {
     return {
       todos: [
         {
