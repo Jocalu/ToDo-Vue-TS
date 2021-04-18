@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+
 interface Query {
   query: string
 }

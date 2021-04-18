@@ -14,70 +14,79 @@
 </template>
 
 <script lang="ts">
-import { Component } from 'vue-property-decorator';
 import Search from './components/Search.vue';
 import Todos from './components/Todos.vue';
 import TodoAdd from './components/TodoAdd.vue';
 
-@Component({
+interface todos {
+  id: number,
+  title: string,
+  completed: boolean
+}
+
+interface data {
+  todos: todos[],
+  copyTodos: todos[],
+}
+
+export default {
+  name: 'App',
   components: {
     Todos, TodoAdd, Search,
   },
-})
-export default {
-name: 'App',
   methods: {
-    deleteTodo(id) {
-      this.todos = this.todos.filter(todo => todo.id != id);
-      this.copyTodos = [...this.todos]
+    deleteTodo(id: number): void {
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+      this.copyTodos = [...this.todos];
     },
-    addTodo(todo) {
+    addTodo(todo: todos): void {
       this.todos.push(todo);
-      this.copyTodos = [...this.todos]
+      this.copyTodos = [...this.todos];
     },
-    querySearch(query){
-      if(query === ''){
+    querySearch(query: string): void {
+      if (query === '') {
         this.copyTodos = [...this.todos];
       } else {
-        const temporal = this.todos.filter(todo => {
-          return todo.title.includes(query)
-        });
+        const temporal = this.todos.filter((todo) => todo.title.includes(query));
         this.copyTodos = [...temporal];
       }
-    }
+    },
   },
-  data(){
+  data(): data {
     return {
       todos: [
         {
           id: 0,
           title: 'comprar la cena',
-          completed: false
+          completed: false,
         },
         {
           id: 1,
           title: 'sacar al perro',
-          completed: true
+          completed: true,
         },
         {
           id: 2,
           title: 'comprar',
-          completed: false
-        },   
+          completed: false,
+        },
       ],
-      copyTodos: []
-    }
+      copyTodos: [],
+    };
   },
-  created(){
-    this.copyTodos = [...this.todos]
-  }
-}
+  created(): void {
+    this.copyTodos = [...this.todos];
+  },
+};
 
-}
 </script>
 
 <style lang="scss">
-*{
+  *,
+  *:before,
+  *:after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 

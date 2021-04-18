@@ -11,15 +11,19 @@
 <script lang="ts">
 import { uuid } from 'vue-uuid';
 
+interface Data {
+  title: string
+}
+
 export default {
   name: 'TodoAdd',
-  data() {
+  data(): Data {
     return {
       title: '',
     };
   },
   methods: {
-    addTodo(event) {
+    addTodo(event: Event): void {
       event.preventDefault();
 
       const newTodo = {
